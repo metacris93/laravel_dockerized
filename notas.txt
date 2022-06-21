@@ -1,0 +1,14 @@
+docker-compose run --rm composer create-project laravel/laravel:\^8.0 .
+
+docker-compose up server php mysql
+
+docker-compose up -d --build server (recrea la imagen si algo ha cambiado)
+
+docker-compose run --rm artisan migrate
+
+DB_CONNECTION=mysql
+DB_HOST=mysql
+DB_PORT=3306
+DB_DATABASE=homestead
+DB_USERNAME=homestead
+DB_PASSWORD=secret
