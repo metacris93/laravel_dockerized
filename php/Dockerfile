@@ -1,4 +1,4 @@
-FROM php:7.4-fpm-alpine
+FROM php:8.1-fpm-alpine
 
 WORKDIR /var/www/html
 
@@ -8,7 +8,7 @@ RUN addgroup -g 1000 laravel && adduser -G laravel -g laravel -s /bin/sh -D lara
 
 COPY --chown=laravel:laravel src .
 
-RUN chmod -R o+w storage bootstrap/cache
+# run chown -R www-data:www-data /var/www/html
 
 USER laravel
 

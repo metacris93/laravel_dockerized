@@ -12,3 +12,10 @@ DB_PORT=3306
 DB_DATABASE=homestead
 DB_USERNAME=homestead
 DB_PASSWORD=secret
+
+volumes:
+    - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro # ro -> read only
+
+volumes:
+    - ./src:/var/www/html:delegated -> no hace mirror con los archivos que estan en el contenedor, si realizamos
+cambios en algun archivo este no se refleja en el otro lado

@@ -1,3 +1,13 @@
 FROM nginx:stable-alpine
 
-EXPOSE 80
+WORKDIR /etc/nginx/conf.d
+
+COPY nginx/nginx.conf .
+
+RUN mv nginx.conf default.conf
+
+WORKDIR /var/www/html
+
+COPY src .
+
+# EXPOSE 80
