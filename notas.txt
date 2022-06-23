@@ -6,6 +6,8 @@ docker-compose up -d --build server (recrea la imagen si algo ha cambiado)
 
 docker-compose run --rm artisan migrate
 
+docker-compose run --rm npm install
+
 DB_CONNECTION=mysql
 DB_HOST=mysql
 DB_PORT=3306
